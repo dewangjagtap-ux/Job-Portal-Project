@@ -24,8 +24,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* allow the app to fill the full viewport width instead of centering */
   min-width: 320px;
   min-height: 100vh;
 }

@@ -1,3 +1,86 @@
+/* Dashboard layout and cards styling */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  color: #e6f2ff;
+}
+
+.sidebar {
+  width: 220px;
+  background: linear-gradient(180deg,#0b1b2a,#0f2a3a);
+  padding: 24px;
+  box-sizing: border-box;
+}
+.sidebar h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  color: #fff;
+}
+.sidebar a {
+  display: block;
+  color: rgba(255,255,255,0.85);
+  padding: 10px 8px;
+  text-decoration: none;
+  border-radius: 6px;
+  margin: 6px 0;
+}
+.sidebar a:hover { background: rgba(255,255,255,0.03); color:#fff; }
+
+.main {
+  display: flex;
+  flex: 1;
+  padding: 24px;
+  gap: 24px;
+  box-sizing: border-box;
+}
+.main-left { flex: 1; }
+.right-col { width: 320px; display:flex; flex-direction:column; gap:16px; }
+
+.card {
+  background: linear-gradient(180deg,#0f2b3a,#072633);
+  padding: 16px;
+  border-radius: 10px;
+  color: #e6f2ff;
+  box-shadow: 0 8px 24px rgba(2,8,23,0.6);
+}
+
+.page-header h2 { margin:0 0 12px; color:#fff; }
+
+.top-cards { display:flex; gap:16px; margin-bottom:16px; }
+.resume-card, .interview-card { flex:1; min-width:0; }
+.resume-percent { font-size:2.2rem; font-weight:700; margin:8px 0; }
+.progress { background: rgba(255,255,255,0.04); height:10px; border-radius:999px; overflow:hidden; }
+.progress-bar { height:100%; background:linear-gradient(90deg,#34d399,#06b6d4); }
+
+.recommended h3 { margin-top:0; }
+.job-grid { display:grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap:12px; margin-top:12px; }
+
+.job-card { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px; }
+.job-title { margin:0 0 6px; font-size:1rem; color:#fff; }
+.job-company { margin:0; color:#bcd5ef; font-size:0.9rem; }
+
+.match-badge { width:56px; height:56px; border-radius:50%; background:linear-gradient(180deg,#e6f9ff,#bff1ff); display:flex; align-items:center; justify-content:center; color:#05202a; font-weight:700; box-shadow: inset 0 -6px 12px rgba(0,0,0,0.12); }
+.match-percent { font-size:0.95rem; }
+
+.job-actions { display:flex; flex-direction:column; gap:8px; }
+button.primary { background: #06b6d4; color:#012; border:none; padding:6px 10px; border-radius:8px; cursor:pointer; }
+button.secondary { background:transparent; color:#bbd7ee; border:1px solid rgba(255,255,255,0.06); padding:6px 10px; border-radius:8px; cursor:pointer; }
+
+.status ul, .notifications ul { list-style:none; padding:0; margin:0; }
+.status li { display:flex; align-items:center; gap:8px; padding:6px 0; color:#dbefff; }
+.status-dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+.status-dot.applied { background:#06b6d4; }
+.status-dot.shortlisted { background:#f59e0b; }
+.status-dot.interview { background:#60a5fa; }
+.status-dot.offer { background:#10b981; }
+
+@media (max-width: 900px) {
+  .dashboard { flex-direction: column; }
+  .sidebar { width: 100%; }
+  .right-col { width: 100%; }
+  .job-actions { flex-direction: row; }
+}
 :root{
   --bg:#0f1724; /* dark navy */
   --card:#0b2030;
