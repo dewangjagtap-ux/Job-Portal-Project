@@ -1,0 +1,128 @@
+:root{
+  --bg:#0f1724; /* dark navy */
+  --card:#0b2030;
+  --muted:#9fb2c6;
+  --accent:#2da9ff;
+  --accent-2:#ff8a00;
+}
+
+/* Page layout */
+.dashboard{
+  display:flex;
+  min-height:100vh;
+  background:var(--bg);
+  color:#e6f0f6;
+}
+
+.sidebar{
+  width:220px;
+  background:#0b2233;
+  padding:24px;
+  box-sizing:border-box;
+}
+
+.main{
+  display:flex;
+  flex:1;
+  padding:24px;
+  gap:20px;
+  box-sizing:border-box;
+}
+
+.main-left{
+  flex:1.2;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.right-col{
+  width:320px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:10px;
+  padding:16px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+.page-header h2{
+  margin:0 0 8px 0;
+  font-size:20px;
+}
+
+.top-cards{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:16px;
+}
+
+.resume-card{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.resume-percent{
+  font-size:32px;
+  font-weight:700;
+  color:var(--accent);
+}
+
+.progress{
+  height:10px;
+  background:rgba(255,255,255,0.05);
+  border-radius:6px;
+  overflow:hidden;
+}
+
+.progress-bar{
+  height:100%;
+  background:linear-gradient(90deg,var(--accent), var(--accent-2));
+  border-radius:6px;
+}
+
+.interview-card .primary{
+  background:var(--accent);
+  color:#042034;
+  border:none;
+  padding:8px 12px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.recommended h3{margin-top:0}
+.job-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:12px;
+  margin-top:12px;
+}
+
+/* JobCard local overrides */
+.card .card{background:transparent;padding:0}
+
+.status ul, .notifications ul{list-style:none;padding:0;margin:8px 0 0 0}
+.status li, .notifications li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+
+.status-dot{
+  display:inline-block;
+  width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:middle;
+}
+.status-dot.applied{background:#2da9ff}
+.status-dot.shortlisted{background:#ffb84d}
+.status-dot.interview{background:#7cffb2}
+.status-dot.offer{background:#8ad0ff}
+
+.muted{color:var(--muted);font-size:13px}
+
+/* small screens */
+@media (max-width:900px){
+  .top-cards{grid-template-columns:1fr}
+  .right-col{display:none}
+  .sidebar{display:none}
+}
